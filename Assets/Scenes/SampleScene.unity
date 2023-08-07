@@ -3243,7 +3243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -967.94}
+  m_AnchoredPosition: {x: -20, y: -967.94006}
   m_SizeDelta: {x: -1107.04, y: 136.06006}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1623571512
@@ -3300,8 +3300,8 @@ GameObject:
   - component: {fileID: 1832258557}
   - component: {fileID: 1832258556}
   - component: {fileID: 1832258555}
-  - component: {fileID: 1832258558}
   - component: {fileID: 1832258559}
+  - component: {fileID: 1832258558}
   m_Layer: 5
   m_Name: RegistrationMenu
   m_TagString: Untagged
@@ -3415,10 +3415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12f35aff9ab8f943bcdf97c179a5e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 1289237729}
-  email: {fileID: 61601847}
-  password: {fileID: 854728752}
-  confPassword: {fileID: 645772465}
+  Username: {fileID: 1289237729}
+  Email: {fileID: 61601847}
+  Password: {fileID: 854728752}
+  ConfPassword: {fileID: 645772465}
+  ErrorText: {fileID: 2115665604}
 --- !u!1 &1934617925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,7 +3956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -9, y: 31}
+  m_AnchoredPosition: {x: -9, y: 9}
   m_SizeDelta: {x: -1039.88, y: 95.48}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2115665604

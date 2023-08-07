@@ -58,8 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChangeObject.cs" />
     <Compile Include="Assets\Scripts\RegistrationMenuBehaviour.cs" />
-    <Compile Include="Assets\Scripts\MenuBehaviour.cs" />
     <Compile Include="Assets\Scripts\Register.cs" />
+    <Compile Include="Assets\Scripts\MenuBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

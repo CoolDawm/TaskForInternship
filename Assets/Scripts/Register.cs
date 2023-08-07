@@ -5,18 +5,20 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 public class Register : MonoBehaviour
 {
-    public GameObject username;
-    public GameObject email;
-    public GameObject password;
-    public GameObject confPassword;
-    private string Username;
-    private string Password;
-    private string Email;
-    private string ConfPassword;
+    public GameObject Username;
+    public GameObject Email;
+    public GameObject Password;
+    public GameObject ConfPassword;
+    public Text ErrorText;
+    private string username;
+    private string password;
+    private string email;
+    private string confPassword;
     private string form;
-    private bool emailVAlid=false;
+    private string theEmailPattern = @"^[\w!#$%&'*+\-/=?\^_{|}~]+(\.[\w!#$%&'*+\-/=?\^_{|}~]+)*" + "@" + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z";
 
-    
+
+
     void Start()
     {
         
@@ -25,16 +27,78 @@ public class Register : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Username = username.GetComponent<InputField>().text;
-        Email = email.GetComponent<InputField>().text;
-        Password = password.GetComponent<InputField>().text;
-        ConfPassword = confPassword.GetComponent<InputField>().text;
+        username = Username.GetComponent<InputField>().text;
+        email = Email.GetComponent<InputField>().text;
+        password = Password.GetComponent<InputField>().text;
+        confPassword = ConfPassword.GetComponent<InputField>().text;
     }
     public void RegisterOnClick()
     {
-        if(Password!=""&& Email != "" && Password != "" && ConfPassword != "")
+        if (DataValidation())
         {
-            Debug.Log("Registration Successful");
+            form = (username + "\n" + email + "\n" + password);
+            System.IO.File.WriteAllText(@"C:\Users\lorik\Desktop\UnityTEstFolder\" + username + ".txt", form);
+            Username.GetComponent<InputField>().text="";
+            Email.GetComponent<InputField>().text = "";
+            Password.GetComponent<InputField>().text = "";
+            ConfPassword.GetComponent<InputField>().text = "";
+            
         }
+        else {
+            ErrorText.text = "There are some mistakes in your registration form";
+        }
+    }
+    public bool DataValidation()
+    {
+        bool UN = false;
+        bool EM = false;
+        bool PW=false;
+        bool CPW = false;
+        if(password !=""&& email != "" && password != "" && confPassword != "")
+        {
+            
+            if (!System.IO.File.Exists(@"C:\Users\lorik\Desktop\UnityTEstFolder\" + Username + ".txt"))
+            {
+                UN = true;
+            }
+            else
+            {
+                Debug.LogWarning("Username Taken");
+            }
+            
+            if(Regex.IsMatch(email,theEmailPattern))
+            {
+                EM = true;
+            }
+            else
+            {
+                Debug.LogWarning("Email is invalid");
+            }
+            if (password.Length > 8) {
+                PW=true;
+            }
+            else
+            {
+                Debug.LogWarning("Password is too short");
+            }
+            if (password==confPassword)
+            {
+                CPW = true;
+            }
+            else
+            {
+                Debug.LogWarning("Password and Password confirmation dont match");
+            }
+            
+        }
+        else
+        {
+            Debug.LogWarning("Some of the fields are empty");
+        }
+        if (PW == true && CPW == true && UN == true && EM == true)
+        {
+            return true;
+        }
+        else return false;
     }
 }

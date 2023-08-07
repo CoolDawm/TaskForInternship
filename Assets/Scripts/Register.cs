@@ -42,7 +42,7 @@ public class Register : MonoBehaviour
             Email.GetComponent<InputField>().text = "";
             Password.GetComponent<InputField>().text = "";
             ConfPassword.GetComponent<InputField>().text = "";
-            
+            ErrorText.text = "Registered";
         }
         else {
             ErrorText.text = "There are some mistakes in your registration form";
@@ -63,7 +63,7 @@ public class Register : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Username Taken");
+                ErrorText.text="Username Taken";
             }
             
             if(Regex.IsMatch(email,theEmailPattern))
@@ -72,14 +72,14 @@ public class Register : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Email is invalid");
+                ErrorText.text = "Email is invalid";
             }
             if (password.Length > 8) {
                 PW=true;
             }
             else
             {
-                Debug.LogWarning("Password is too short");
+                ErrorText.text = "Password is too short";
             }
             if (password==confPassword)
             {
@@ -87,13 +87,13 @@ public class Register : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Password and Password confirmation dont match");
+                ErrorText.text = "Password and Password confirmation dont match";
             }
             
         }
         else
         {
-            Debug.LogWarning("Some of the fields are empty");
+            ErrorText.text = "Some of the fields are empty";
         }
         if (PW == true && CPW == true && UN == true && EM == true)
         {

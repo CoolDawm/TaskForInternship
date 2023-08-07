@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuBehaviour : MonoBehaviour
 {
     public GameObject menu;
-    public GameObject registrationMenu;  
+    public GameObject nextPanel;  
     void Start()
     {
         
@@ -14,9 +14,13 @@ public class MenuBehaviour : MonoBehaviour
     {
         
     }
-    public void Registration()
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    public void NextPanel()
     {
         menu.SetActive(false);
-        registrationMenu.SetActive(true);
+        nextPanel.SetActive(true);
     }
 }

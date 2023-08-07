@@ -2,10 +2,12 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ChangeObject
+    - DataChange
+    - Login
     - MenuBehaviour
+    - Register
     - RegistrationMenuBehaviour
     PlayFabEditorExtensions.dll:
-    - PlayFab.PfEditor.PlayFabEditor
     - PlayFab.PfEditor.PlayFabEditorPrefsSO
     Unity.PlasticSCM.Editor.dll:
     - Unity.PlasticSCM.Editor.PlasticWindow
@@ -43,7 +45,28 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: MenuBehaviour
-    methodName: Registration
+    methodName: NextPanel
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuBehaviour
+    methodName: Exit
+  - assembly: Assembly-CSharp
+    fullTypeName: Login
+    methodName: LoginOnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: DataChange
+    methodName: ChangeDataOnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: Register
+    methodName: RegisterOnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuBehaviour
+    methodName: NextPanel
+  - assembly: Assembly-CSharp
+    fullTypeName: DataChange
+    methodName: InputFieldsUnlock
+  - assembly: Assembly-CSharp
+    fullTypeName: MenuBehaviour
+    methodName: Exit
   - assembly: Assembly-CSharp
     fullTypeName: RegistrationMenuBehaviour
     methodName: BackToMainMenu
@@ -70,27 +93,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1556}
+      Script: {instanceID: 1640}
     - Class: 114
-      Script: {instanceID: 2538}
+      Script: {instanceID: 2626}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2834}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 3022}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 3344}
+      Script: {instanceID: 5266}
     - Class: 114
-      Script: {instanceID: 4630}
+      Script: {instanceID: 5560}
     - Class: 114
-      Script: {instanceID: 5178}
+      Script: {instanceID: 6014}
     - Class: 114
-      Script: {instanceID: 5472}
+      Script: {instanceID: 23082}
     - Class: 114
-      Script: {instanceID: 5926}
+      Script: {instanceID: 23086}
     - Class: 114
-      Script: {instanceID: 6134}
+      Script: {instanceID: 23090}
+    - Class: 114
+      Script: {instanceID: 23094}
+    - Class: 114
+      Script: {instanceID: 23098}
+    - Class: 114
+      Script: {instanceID: 23102}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -374,12 +403,6 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: faa89f39eab07a1d2257e69d9191952b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ChangeObject
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -542,12 +565,6 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: fc2f372a64a68149c67edd61dabc4b8d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RegistrationMenuBehaviour
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -708,12 +725,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: fc2f372a64a68149c67edd61dabc4b8d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuBehaviour
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -900,6 +911,42 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 0ca6593b97e45757ce26432a768bbcb5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Login
+  - hash:
+      serializedVersion: 2
+      Hash: 865eb639c4dc3f6e79bea4d21dce2a08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataChange
+  - hash:
+      serializedVersion: 2
+      Hash: faa89f39eab07a1d2257e69d9191952b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChangeObject
+  - hash:
+      serializedVersion: 2
+      Hash: fc0e3637aa2f66927b274aa3ce9fea3a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: b61277734fa2096379bfcb7e7589d27f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Register
+  - hash:
+      serializedVersion: 2
+      Hash: fc2f372a64a68149c67edd61dabc4b8d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RegistrationMenuBehaviour
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
